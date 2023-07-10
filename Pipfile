@@ -13,6 +13,10 @@ python-decouple = "~=3.4"
 uvicorn = "~=0.13"
 
 [dev-packages]
+asgi-lifespan = "~=1.0"
+httpx = "~=0.18"
+pytest-asyncio = ">=0.15.1"
+yapf = "*"
 
 [requires]
 python_version = "3.8"

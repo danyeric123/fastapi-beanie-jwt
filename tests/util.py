@@ -11,6 +11,7 @@ async def auth_payload(client: AsyncClient, email: str) -> RefreshToken:
     """Returns the login auth payload for an email"""
     data = {"email": email, "password": email}
     resp = await client.post("/auth/login", json=data)
+    print(resp)
     return RefreshToken(**resp.json())
 
 

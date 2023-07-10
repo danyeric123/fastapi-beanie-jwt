@@ -12,7 +12,6 @@ from myserver.routes.register import router as RegisterRouter
 from myserver.routes.user import router as UserRouter
 from myserver.routes.blog import router as BlogRouter
 
-
 app.include_router(AuthRouter)
 app.include_router(MailRouter)
 app.include_router(RegisterRouter)

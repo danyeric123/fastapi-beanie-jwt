@@ -9,7 +9,6 @@ from myserver.models.auth import AccessToken, RefreshToken
 from myserver.models.user import User, UserAuth
 from myserver.util.password import hash_password
 
-
 router = APIRouter(prefix="/auth", tags=["Auth"])
 
 

@@ -11,14 +11,12 @@ from pydantic import EmailStr
 from myserver.models.user import User
 from myserver.util.mail import send_verification_email
 
-
 router = APIRouter(prefix="/mail", tags=["Mail"])
 
 
 @router.post("/verify")
-async def request_verification_email(
-    email: EmailStr = Body(..., embed=True), auth: AuthJWT = Depends()
-):
+async def request_verification_email(email: EmailStr = Body(..., embed=True),
+                                     auth: AuthJWT = Depends()):
     """Send the user a verification email"""
     user = await User.by_email(email)
     if user.email_confirmed_at is not None:

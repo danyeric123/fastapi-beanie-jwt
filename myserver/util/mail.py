@@ -30,7 +30,8 @@ async def send_verification_email(email: str, token: str):
         message = MessageSchema(
             recipients=[email],
             subject="MyServer Email Verification",
-            body="Welcome to MyServer! We just need to verify your email to begin: "
+            body=
+            "Welcome to MyServer! We just need to verify your email to begin: "
             + url,
         )
         await mail.send_message(message)
@@ -46,6 +47,7 @@ async def send_password_reset_email(email: str, token: str):
         message = MessageSchema(
             recipients=[email],
             subject="MyServer Password Reset",
-            body=f"Click the link to reset your MyServer account password: {url}\nIf you did not request this, please ignore this email",
+            body=
+            f"Click the link to reset your MyServer account password: {url}\nIf you did not request this, please ignore this email",
         )
         await mail.send_message(message)

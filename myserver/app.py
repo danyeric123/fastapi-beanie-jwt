@@ -12,7 +12,6 @@ from myserver.config import CONFIG
 from myserver.models.user import User
 from myserver.models.blog import BlogPostDB as BlogPost
 
-
 app = FastAPI()
 
 

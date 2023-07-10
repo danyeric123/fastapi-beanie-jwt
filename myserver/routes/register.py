@@ -26,9 +26,8 @@ async def user_registration(user_auth: UserAuth):
 
 
 @router.post("/forgot-password")
-async def forgot_password(
-    email: EmailStr = Body(..., embed=True), auth: AuthJWT = Depends()
-):
+async def forgot_password(email: EmailStr = Body(..., embed=True),
+                          auth: AuthJWT = Depends()):
     """Sends password reset email"""
     user = await User.by_email(email)
     if user.email_confirmed_at is not None:
@@ -41,9 +40,9 @@ async def forgot_password(
 
 
 @router.post("/reset-password/{token}", response_model=UserOut)
-async def reset_password(
-    token: str, password: str = Body(..., embed=True), auth: AuthJWT = Depends()
-):
+async def reset_password(token: str,
+                         password: str = Body(..., embed=True),
+                         auth: AuthJWT = Depends()):
     """Reset user password from token value"""
     # Manually assign the token value
     auth._token = token  # pylint: disable=protected-access
